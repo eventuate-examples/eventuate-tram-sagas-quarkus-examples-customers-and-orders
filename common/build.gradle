@@ -1,0 +1,10 @@
+plugins {
+    id "io.quarkus" version "${quarkusVersion}"
+    id 'org.kordamp.gradle.jandex' version '0.6.0'
+}
+
+dependencies {
+    compile "commons-lang:commons-lang:2.6"
+    compile 'javax.persistence:javax.persistence-api:2.2'
+}
+
