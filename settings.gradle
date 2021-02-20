@@ -1,0 +1,8 @@
+include 'common'
+include 'customer-service-api-web'
+include 'customer-service-api-messaging'
+include 'customer-service'
+include 'order-service-api-web'
+include 'order-service-api-messaging'
+include 'order-service'
+include 'end-to-end-tests'

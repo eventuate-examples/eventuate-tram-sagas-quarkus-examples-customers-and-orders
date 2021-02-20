@@ -1,0 +1,31 @@
+import org.apache.tools.ant.filters.ReplaceTokens
+
+plugins {
+    id "io.quarkus" version "${quarkusVersion}"
+    id 'org.kordamp.gradle.jandex' version '0.6.0'
+}
+
+dependencies {
+    compile project(":common")
+    compile project(":customer-service-api-messaging")
+    compile project(":order-service-api-messaging")
+    compile project(":order-service-api-web")
+
+    compile "io.eventuate.tram.sagas:eventuate-tram-sagas-quarkus-orchestration-simple-dsl:$eventuateTramSagasQuarkusVersion"
+    compile "io.eventuate.tram.core:eventuate-tram-quarkus-jdbc-kafka:$eventuateTramQuarkusVersion"
+
+    compile 'io.quarkus:quarkus-smallrye-health'
+    compile 'io.quarkus:quarkus-smallrye-openapi'
+    compile 'io.quarkus:quarkus-resteasy-jackson'
+
+    compile 'io.quarkus:quarkus-jdbc-mysql'
+    compile 'io.quarkus:quarkus-jdbc-mssql'
+    compile 'io.quarkus:quarkus-jdbc-postgresql'
+
+    compile 'io.quarkus:quarkus-hibernate-orm'
+}
+
+processResources {
+    outputs.upToDateWhen { false }
+    filter ReplaceTokens, tokens: ["EVENTUATEDATABASE": System.env.EVENTUATEDATABASE ?: "mysql"]
+}
