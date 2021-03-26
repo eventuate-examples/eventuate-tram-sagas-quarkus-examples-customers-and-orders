@@ -10,9 +10,9 @@ dependencies {
     compile project(":customer-service-api-messaging")
     compile project(":customer-service-api-web")
 
-    compile "io.eventuate.tram.sagas:eventuate-tram-sagas-quarkus-orchestration-simple-dsl:$eventuateTramSagasQuarkusVersion"
-    compile "io.eventuate.tram.sagas:eventuate-tram-sagas-quarkus-participant:$eventuateTramSagasQuarkusVersion"
-    compile "io.eventuate.tram.core:eventuate-tram-quarkus-jdbc-kafka:$eventuateTramQuarkusVersion"
+    compile "io.eventuate.tram.sagas:eventuate-tram-sagas-quarkus-orchestration-simple-dsl"
+    compile "io.eventuate.tram.sagas:eventuate-tram-sagas-quarkus-participant"
+    compile "io.eventuate.tram.core:eventuate-tram-quarkus-jdbc-kafka"
 
     compile 'io.quarkus:quarkus-smallrye-health'
     compile 'io.quarkus:quarkus-smallrye-openapi'

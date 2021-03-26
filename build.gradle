@@ -30,6 +30,7 @@ subprojects {
         compile 'io.quarkus:quarkus-arc-deployment'
 
         implementation enforcedPlatform("io.quarkus:quarkus-bom:${quarkusVersion}")
+        implementation(platform("io.eventuate.platform:eventuate-platform-dependencies:$eventuatePlatformVersion"))
     }
 
 }
